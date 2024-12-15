@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
+import { Grid } from './components/Grid';
+import { PlayerList } from './components/PlayerList';
+import { History } from './components/History';
+import { CharacterInput } from './components/CharacterInput';
+
+import { Play } from 'lucide-react';
 
 
 function App() {
   const [showNamePrompt, setShowNamePrompt] = useState(false);
   const [name, setName] = useState('');
- 
+
   const [error, setError] = useState<string | null>(null);
 
   const handlePlayClick = () => {
@@ -16,10 +22,10 @@ function App() {
     e.preventDefault();
     if (!name.trim()) return;
     
-  
+
   };
 
- 
+
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         {showNamePrompt ? (
@@ -50,7 +56,7 @@ function App() {
             onClick={handlePlayClick}
             className="bg-blue-500 text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-blue-600 transition-colors duration-200 flex items-center gap-2"
           >
-         
+            <Play className="w-6 h-6" />
             Play Online
           </button>
         )}
