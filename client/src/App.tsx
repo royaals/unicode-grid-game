@@ -3,14 +3,14 @@ import { Grid } from './components/Grid';
 import { PlayerList } from './components/PlayerList';
 import { History } from './components/History';
 import { CharacterInput } from './components/CharacterInput';
-
+import { useGameStore } from './store/gameStore';
 import { Play } from 'lucide-react';
-
+import { socketService } from './services/socket';
 
 function App() {
   const [showNamePrompt, setShowNamePrompt] = useState(false);
   const [name, setName] = useState('');
-
+  const { player, setPlayer } = useGameStore();
   const [error, setError] = useState<string | null>(null);
 
   const handlePlayClick = () => {
@@ -22,10 +22,16 @@ function App() {
     e.preventDefault();
     if (!name.trim()) return;
     
-
+    try {
+      const player = await socketService.connect(name.trim());
+      setPlayer(player);
+      setShowNamePrompt(false);
+    } catch (err) {
+      setError('Failed to connect to the game server. Please try again.');
+    }
   };
 
-
+  if (!player) {
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         {showNamePrompt ? (
@@ -83,6 +89,6 @@ function App() {
       </div>
     </div>
   );
-
+}
 
 export default App;
