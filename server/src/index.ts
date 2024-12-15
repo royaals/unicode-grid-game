@@ -1,12 +1,28 @@
 import express from 'express';
+import { createServer } from 'http';
+import { Server } from 'socket.io';
+import { corsConfig } from './config/cors.js';
+import { PORT} from './config/server.js';
+
 
 const app = express();
-const port = 3000;
+const httpServer = createServer(app);
 
-app.get('/', (req:any, res:any) => {
-    res.send('Hello World!');
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', corsConfig.origin);
+  res.header('Access-Control-Allow-Methods', corsConfig.methods.join(','));
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  next();
 });
 
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+const io = new Server(httpServer, {
+  cors: corsConfig
+});
+
+
+
+httpServer.listen(PORT, () => {
+  console.log(`Server is running on ${PORT}`); 
 });
