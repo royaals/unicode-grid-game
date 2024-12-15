@@ -3,7 +3,8 @@ import { createServer } from 'http';
 import { Server } from 'socket.io';
 import { corsConfig } from './config/cors.js';
 import { PORT} from './config/server.js';
-
+import { GameManager } from './managers/GameManager.js';
+import { setupSocketHandlers } from './socket/handlers.js';
 
 const app = express();
 const httpServer = createServer(app);
@@ -21,7 +22,8 @@ const io = new Server(httpServer, {
   cors: corsConfig
 });
 
-
+const gameManager = new GameManager();
+setupSocketHandlers(io, gameManager);
 
 httpServer.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`); 
