@@ -18,11 +18,7 @@ export const PlayerList: React.FC = () => {
             className="flex items-center justify-between p-2 bg-gray-50 rounded"
           >
             <span>{player.name}</span>
-            {player.cooldown && (
-              <span className="text-sm text-gray-500">
-                Cooldown: {Math.ceil(player.cooldown / 1000)}s
-              </span>
-            )}
+           
           </div>
         ))}
       </div>

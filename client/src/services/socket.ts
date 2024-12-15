@@ -5,7 +5,7 @@ import { GridCell, Player, GridUpdate } from '../types/game';
 class SocketService {
   private socket: Socket | null = null;
   private static instance: SocketService;
-  private readonly serverUrl = 'https://unicode-grid-game.vercel.app/';
+  private readonly serverUrl = 'https://unicode-grid-game.onrender.com';
 
   private constructor() {}
 
