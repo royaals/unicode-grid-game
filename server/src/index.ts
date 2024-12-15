@@ -21,7 +21,9 @@ app.use((req, res, next) => {
 const io = new Server(httpServer, {
   cors: corsConfig
 });
-
+app.get('/', (req, res) => {
+  res.send('Server is running on node.js');
+});
 const gameManager = new GameManager();
 setupSocketHandlers(io, gameManager);
 
