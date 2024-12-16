@@ -7,6 +7,10 @@ a multiplayer web application that lets a player select and update a block with 
 - **Timed Restriction:** After the player submits, they get a 1-minute restriction to update. After the timed restriction passes, they can update again.
 - **Historical Updates:** Include the ability to go back in time to see all the updates made to the grid.
 
+## Hosted Link
+
+You can access the live application at [gamitar.devprojects.world](https://gamitar.devprojects.world).
+
 ## Tech Stack
 
 - **Frontend:** ReactJS
