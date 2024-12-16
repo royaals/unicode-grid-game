@@ -1,11 +1,11 @@
 # Unicode Grid Game
 
-a multiplayer web application that lets a player select and update a block with a Unicode character in a 10x10 grid. Once a player submits a character in the block, they should not be able to update any block again. At any given time, a player will be able to see how many players are currently online. The grid must be updated in real-time for other players connected.
+A multiplayer web application that lets a player select and update a block with a Unicode character in a 10x10 grid. Once a player submits a character in the block, they will not able to update any block again. At any given time, a player will be able to see how many players are currently online. The grid is updated in real-time for other players connected.
 
 ### Features
 
 - **Timed Restriction:** After the player submits, they get a 1-minute restriction to update. After the timed restriction passes, they can update again.
-- **Historical Updates:** Include the ability to go back in time to see all the updates made to the grid.
+- **Historical Updates:** Included the ability to go back in time to see all the updates made to the grid.
 
 ## Hosted Link
 
@@ -48,27 +48,5 @@ You can access the live application at [gamitar.devprojects.world](https://gamit
    http://localhost:5173
    ```
 
-## Project Structure
 
-```
-/unicode-grid-game
-├── server
-│   ├── src
-│   │   ├── config
-│   │   ├── managers
-│   │   ├── socket
-│   │   └── index.ts
-│   ├── package.json
-│   └── tsconfig.json
-├── client
-│   ├── public
-│   ├── src
-│   │   ├── components
-│   │   ├── hooks
-│   │   ├── services
-│   │   └── App.tsx
-│   ├── package.json
-│   └── tsconfig.json
-├── README.md
-└── package.json
-```
+
