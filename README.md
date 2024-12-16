@@ -4,8 +4,10 @@ A multiplayer web application that lets a player select and update a block with 
 
 ### Features
 
-- **Timed Restriction:** After the player submits, they get a 1-minute restriction to update. After the timed restriction passes, they can update again.
-- **Historical Updates:** Included the ability to go back in time to see all the updates made to the grid.
+- **Real-time grid updates**
+- **Player count display**
+- **Timed restriction**
+- **Historical updates**
 
 ## Hosted Link
 
