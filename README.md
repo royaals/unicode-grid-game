@@ -9,9 +9,6 @@ A multiplayer web application that lets a player select and update a block with 
 - **Timed restriction**
 - **Historical updates**
 
-## Hosted Link
-
-You can access the live application at [gamitar.devprojects.world](https://gamitar.devprojects.world).
 
 ## Tech Stack
 
